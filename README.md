@@ -8,43 +8,43 @@ This repository hosts the SoyCult dataset along with the associated source codes
 
 - *seg*: This folder contains the Python scripts for the contour-based segmentation of the soybean seeds, as described in Subsection II.B of the paper. To reproduce the results presented in the paper, execute these scripts in the following order:
 
-  1) *imgs2edges.py*:
-     - Inputs: Images in 'data/imgs'
-     - Outputs: Images in 'data/edges' and 'data/edges_overlayed'
+  1. *imgs2edges.py*:
+     - Inputs: Images in *data/imgs*
+     - Outputs: Images in *data/edges* and *data/edges_overlayed*
 
-  2) *edges2conts.py*:
-     - Inputs: Images in 'data/edges' and 'data/imgs'
-     - Outputs: Images in 'data/conts' and 'data/edges_overlayed'
+  2. *edges2conts.py*:
+     - Inputs: Images in *data/edges* and *data/imgs*
+     - Outputs: Images in *data/conts* and *data/edges_overlayed*
 
-  3) *conts2holes.py*:
-     - Inputs: Images in 'data/conts'
-     - Outputs: Images in 'data/holes'
+  3. *conts2holes.py*:
+     - Inputs: Images in *data/conts*
+     - Outputs: Images in *data/holes*
 
-  4) *holes2seeds.py*:
-     - Inputs: Images in 'data/holes' and 'data/imgs'
-     - Outputs: Images in 'data/seeds'
+  4. *holes2seeds.py*:
+     - Inputs: Images in *data/holes* and *data/imgs*
+     - Outputs: Images in *data/seeds*
 
-  Note: The script 'compute_maxshape.py' is solely used to determine the dimensions of the largest grain among all cultivars. Its result is already integrated as parameters in 'holes2seeds.py' and does not need to be executed.
+  Note: The script *compute_maxshape.py* is solely used to determine the dimensions of the largest grain among all cultivars. Its result is already integrated as parameters in *holes2seeds.py* and does not need to be executed.
 
 - *pred*: This folder contains the Python scripts for soybean cultivar predictions using baseline systems, described in Section III of the paper, as well as the scripts for evaluating these systems, described in Section IV of the paper. To reproduce the results presented in the paper, execute these scripts in the following order:
 
-  1) *gen_folds.py*:
-     - Inputs: Images in 'data/seeds'
-     - Outputs: CSV files in 'data/folds'
+  1. *gen_folds.py*:
+     - Inputs: Images in *data/seeds*
+     - Outputs: CSV files in *data/folds*
      
-  2) *gen_seed_folds.py*:
-     - Inputs: CSV files in 'data/folds' and images in 'data/seeds'
-     - Outputs: Images in 'data/seeds_folds'
+  2. *gen_seed_folds.py*:
+     - Inputs: CSV files in *data/folds* and images in *data/seeds*
+     - Outputs: Images in *data/seeds_folds*
      
-  3) *feature_extraction.py*:
-     - Inputs: Images in 'data/seeds_folds'
-     - Outputs: MAT-files in 'data/feats'
+  3. *feature_extraction.py*:
+     - Inputs: Images in *data/seeds_folds*
+     - Outputs: MAT-files in *data/feats*
           
-  4) *tests.py*:
-     - Inputs: MAT-files in 'data/feats/densenet201'
-     - Outputs: Plots in 'data/results/conf_matrices' and 'data/results/post_hoc'
+  4. *tests.py*:
+     - Inputs: MAT-files in *data/feats/densenet201*
+     - Outputs: Plots in *data/results/conf_matrices* and *data/results/post_hoc*
      
-  Note: The script 'training.py' is solely used to tune the optimal hyperparameters for the top-level classifiers. As their results are already integrated in 'tests.py', it does not need to be executed. If executed, their results will be saved as Latex tables in 'data/tuning'.
+  Note: The script *training.py* is solely used to tune the optimal hyperparameters for the top-level classifiers. As their results are already integrated in *tests.py*, it does not need to be executed. If executed, their results will be saved as Latex tables in *data/tuning*.
      
 ## Dependencies
 
